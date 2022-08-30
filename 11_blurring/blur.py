@@ -75,3 +75,18 @@ plt.axis("off")
 plt.title("medyan bulanıklık")
 plt.show()
 
+#denoising
+df = cv2.fastNlMeansDenoising(img,None,11, 7, 21)
+plt.figure()
+plt.imshow(df)
+plt.axis("off")
+plt.title("denoise")
+plt.show()
+
+sharp = unsharp_mask(df,amount=4.0)
+plt.figure()
+plt.imshow(sharp)
+plt.axis("off")
+plt.title("sharpened")
+plt.show()
+
